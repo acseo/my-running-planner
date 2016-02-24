@@ -22,6 +22,8 @@ class AppKernel extends Kernel
 
             new ACSEO\Bundle\MyRunningPlannerBundle\ACSEOMyRunningPlannerBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
             new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
         ];
 

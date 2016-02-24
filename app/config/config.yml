@@ -99,3 +99,19 @@ lexik_jwt_authentication:
     public_key_path:  %jwt_public_key_path%
     pass_phrase:      %jwt_key_pass_phrase%
     token_ttl:        %jwt_token_ttl%
+
+fos_rest:
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener: true
+    view:
+        view_response_listener: 'force'
+        templating_formats:
+            html: false
+    routing_loader:
+        default_format: json
+    serializer:
+        serialize_null: true
+
+jms_serializer:
+    enable_short_alias: false
