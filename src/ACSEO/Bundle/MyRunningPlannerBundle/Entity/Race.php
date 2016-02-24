@@ -3,6 +3,7 @@
 namespace ACSEO\Bundle\MyRunningPlannerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Race
@@ -22,31 +23,49 @@ class Race
     private $id;
 
     /**
+     * Number of meters of vertical ascension.
+     *
+     * @var integer
+     *
+     * @ORM\Column(name="ascension", type="integer")
+     * @Groups({"race_read", "race_write"})
+     */
+    private $ascension;
+
+    /**
+     * When the race will happen.
+     *
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @Groups({"race_read", "race_write"})
      */
     private $date;
 
     /**
+     * Number of kilometers of the race.
+     *
      * @var integer
      *
      * @ORM\Column(name="distance", type="integer")
+     * @Groups({"race_read", "race_write"})
      */
     private $distance;
 
     /**
-     * @var integer
+     * Number of meters of vertical ascension.
      *
-     * @ORM\Column(name="ascension", type="integer")
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255 )
+     * @Groups({"race_read", "race_write"})
      */
-    private $ascension;
-
+    private $name;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +88,7 @@ class Race
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -92,7 +111,7 @@ class Race
     /**
      * Get distance
      *
-     * @return integer 
+     * @return integer
      */
     public function getDistance()
     {
@@ -115,10 +134,33 @@ class Race
     /**
      * Get ascension
      *
-     * @return integer 
+     * @return integer
      */
     public function getAscension()
     {
         return $this->ascension;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Race
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

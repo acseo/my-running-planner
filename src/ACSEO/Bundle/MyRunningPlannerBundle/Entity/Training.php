@@ -3,6 +3,7 @@
 namespace ACSEO\Bundle\MyRunningPlannerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Training
@@ -25,6 +26,7 @@ class Training
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @Groups({"training_read", "training_write"})
      */
     private $date;
 
@@ -32,6 +34,7 @@ class Training
      * @var integer
      *
      * @ORM\Column(name="repetition", type="integer")
+     * @Groups({"training_read", "training_write"})
      */
     private $repetition;
 
@@ -39,6 +42,7 @@ class Training
      * @var integer
      *
      * @ORM\Column(name="practiceDistance", type="integer")
+     * @Groups({"training_read", "training_write"})
      */
     private $practiceDistance;
 
@@ -46,6 +50,7 @@ class Training
      * @var integer
      *
      * @ORM\Column(name="recuperationDistance", type="integer")
+     * @Groups({"training_read", "training_write"})
      */
     private $recuperationDistance;
 
@@ -53,7 +58,7 @@ class Training
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +81,7 @@ class Training
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -99,7 +104,7 @@ class Training
     /**
      * Get repetition
      *
-     * @return integer 
+     * @return integer
      */
     public function getRepetition()
     {
@@ -122,7 +127,7 @@ class Training
     /**
      * Get practiceDistance
      *
-     * @return integer 
+     * @return integer
      */
     public function getPracticeDistance()
     {
@@ -145,7 +150,7 @@ class Training
     /**
      * Get recuperationDistance
      *
-     * @return integer 
+     * @return integer
      */
     public function getRecuperationDistance()
     {
