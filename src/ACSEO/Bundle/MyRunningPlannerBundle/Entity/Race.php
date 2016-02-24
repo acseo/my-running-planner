@@ -63,6 +63,14 @@ class Race
     private $name;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="ranking", type="integer", nullable=true)
+     * @Groups({"ranking_read", "race_write"})
+     */
+    private $ranking;
+
+    /**
      * Get id.
      *
      * @return int
@@ -166,5 +174,28 @@ class Race
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set ranking
+     *
+     * @param integer $ranking
+     * @return Race
+     */
+    public function setRanking($ranking)
+    {
+        $this->ranking = $ranking;
+
+        return $this;
+    }
+
+    /**
+     * Get ranking
+     *
+     * @return integer
+     */
+    public function getRanking()
+    {
+        return $this->ranking;
     }
 }
