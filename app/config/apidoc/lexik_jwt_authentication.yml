@@ -1,0 +1,54 @@
+login_check:
+    requirements: []
+    views: []
+    filters: []
+    parameters:
+        _password:
+            dataType: string
+            required: true
+            name: _password
+            description: Password
+            readonly: false
+        _username:
+            dataType: string
+            required: true
+            name: _username
+            description: Username
+            readonly: false
+    input: null
+    output: null
+    link: null
+    description: "Get JWT token for logged user"
+    section: "Session"
+    documentation: null
+    resource: null
+    method: "POST"
+    host: ""
+    uri: "/login_check"
+    response:
+        token:
+            dataType: string
+            required: true
+            description: JWT token
+            readonly: true
+    route:
+        path: /login_check
+        defaults:
+            _controller: FOS\UserBundle\Controller\SecurityController::checkAction
+        requirements: []
+        options:
+            compiler_class: Symfony\Component\Routing\RouteCompiler
+        host: ''
+        schemes: []
+        methods: [ 'POST' ]
+        condition: ''
+    https: false
+    authentication: false
+    authenticationRoles: []
+    cache: null
+    deprecated: false
+    statusCodes: []
+    resourceDescription: null
+    responseMap: []
+    parsedResponseMap: []
+    tags: []
