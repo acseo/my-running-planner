@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Training
+ * Training.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ACSEO\Bundle\MyRunningPlannerBundle\Entity\TrainingRepository")
@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 class Training
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -31,7 +31,7 @@ class Training
     private $date;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="repetition", type="integer")
      * @Groups({"training_read", "training_write"})
@@ -39,7 +39,7 @@ class Training
     private $repetition;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="practiceDistance", type="integer")
      * @Groups({"training_read", "training_write"})
@@ -47,18 +47,17 @@ class Training
     private $practiceDistance;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="recuperationDistance", type="integer")
      * @Groups({"training_read", "training_write"})
      */
     private $recuperationDistance;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -66,9 +65,10 @@ class Training
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
+     *
      * @return Training
      */
     public function setDate($date)
@@ -79,7 +79,7 @@ class Training
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -89,9 +89,10 @@ class Training
     }
 
     /**
-     * Set repetition
+     * Set repetition.
      *
-     * @param integer $repetition
+     * @param int $repetition
+     *
      * @return Training
      */
     public function setRepetition($repetition)
@@ -102,9 +103,9 @@ class Training
     }
 
     /**
-     * Get repetition
+     * Get repetition.
      *
-     * @return integer
+     * @return int
      */
     public function getRepetition()
     {
@@ -112,9 +113,10 @@ class Training
     }
 
     /**
-     * Set practiceDistance
+     * Set practiceDistance.
      *
-     * @param integer $practiceDistance
+     * @param int $practiceDistance
+     *
      * @return Training
      */
     public function setPracticeDistance($practiceDistance)
@@ -125,9 +127,9 @@ class Training
     }
 
     /**
-     * Get practiceDistance
+     * Get practiceDistance.
      *
-     * @return integer
+     * @return int
      */
     public function getPracticeDistance()
     {
@@ -135,9 +137,10 @@ class Training
     }
 
     /**
-     * Set recuperationDistance
+     * Set recuperationDistance.
      *
-     * @param integer $recuperationDistance
+     * @param int $recuperationDistance
+     *
      * @return Training
      */
     public function setRecuperationDistance($recuperationDistance)
@@ -148,9 +151,9 @@ class Training
     }
 
     /**
-     * Get recuperationDistance
+     * Get recuperationDistance.
      *
-     * @return integer
+     * @return int
      */
     public function getRecuperationDistance()
     {

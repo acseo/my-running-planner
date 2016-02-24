@@ -7,4 +7,23 @@ services:
                    arguments: [ { groups: [ "race_read" ] } ]
             -      method:    "initDenormalizationContext"
                    arguments: [ { groups: [ "race_write" ] } ]
+            -      method:    "initItemOperations"
+                   arguments:
+                       -
+                           - "@resource.race.item_operation.get"
         tags:      [ { name: "api.resource" } ]
+
+    resource.race.item_operation.get:
+        class:     "Dunglas\ApiBundle\Api\Operation\Operation"
+        public:    false
+        factory:   [ "@api.operation_factory", "createItemOperation" ]
+        arguments:
+            - "@resource.race"
+            - "GET"
+            - "/races/{id}"
+            - "ACSEOMyRunningPlannerBundle:Race:get"
+            - "api_races_get"
+            -    # Context (will be present in Hydra documentation)
+                 "@type":       "hydra:Operation"
+                 "hydra:title": "Get race"
+                 "returns":     "xmls:string"

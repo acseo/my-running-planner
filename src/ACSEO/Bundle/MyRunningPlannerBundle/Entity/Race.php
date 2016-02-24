@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Race
+ * Race.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ACSEO\Bundle\MyRunningPlannerBundle\Entity\RaceRepository")
@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 class Race
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -25,7 +25,7 @@ class Race
     /**
      * Number of meters of vertical ascension.
      *
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="ascension", type="integer")
      * @Groups({"race_read", "race_write"})
@@ -45,7 +45,7 @@ class Race
     /**
      * Number of kilometers of the race.
      *
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="distance", type="integer")
      * @Groups({"race_read", "race_write"})
@@ -63,9 +63,9 @@ class Race
     private $name;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -73,9 +73,10 @@ class Race
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
+     *
      * @return Race
      */
     public function setDate($date)
@@ -86,7 +87,7 @@ class Race
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -96,9 +97,10 @@ class Race
     }
 
     /**
-     * Set distance
+     * Set distance.
      *
-     * @param integer $distance
+     * @param int $distance
+     *
      * @return Race
      */
     public function setDistance($distance)
@@ -109,9 +111,9 @@ class Race
     }
 
     /**
-     * Get distance
+     * Get distance.
      *
-     * @return integer
+     * @return int
      */
     public function getDistance()
     {
@@ -119,9 +121,10 @@ class Race
     }
 
     /**
-     * Set ascension
+     * Set ascension.
      *
-     * @param integer $ascension
+     * @param int $ascension
+     *
      * @return Race
      */
     public function setAscension($ascension)
@@ -132,9 +135,9 @@ class Race
     }
 
     /**
-     * Get ascension
+     * Get ascension.
      *
-     * @return integer
+     * @return int
      */
     public function getAscension()
     {
@@ -142,9 +145,10 @@ class Race
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
+     *
      * @return Race
      */
     public function setName($name)
@@ -155,7 +159,7 @@ class Race
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
