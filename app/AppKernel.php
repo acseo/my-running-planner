@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
 
             new ACSEO\Bundle\MyRunningPlannerBundle\ACSEOMyRunningPlannerBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'])) {

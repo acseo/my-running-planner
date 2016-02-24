@@ -21,7 +21,8 @@
         "dunglas/api-bundle": "~1.0",
         "nelmio/cors-bundle": "~1.4",
         "nelmio/api-doc-bundle": "~2.9@dev",
-        "friendsofsymfony/http-cache-bundle": "~1.0"
+        "friendsofsymfony/http-cache-bundle": "~1.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

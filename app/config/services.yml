@@ -4,7 +4,8 @@ parameters:
 #    parameter_name: value
 
 services:
-
+  fos_user.doctrine_registry:
+      alias: doctrine
 # Examples of API resource mapping, learn more at
 # https://github.com/dunglas/DunglasApiBundle
 #     resource.book:

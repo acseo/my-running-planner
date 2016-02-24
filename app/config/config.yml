@@ -4,6 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: webservices/race.yml }
     - { resource: webservices/training.yml }
+    - { resource: webservices/user.yml }
 
 framework:
     #esi:             ~
@@ -87,3 +88,8 @@ nelmio_api_doc:
         request_format:
             formats:
                 json:       "application/json"
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: ACSEO\Bundle\MyRunningPlannerBundle\Entity\User
