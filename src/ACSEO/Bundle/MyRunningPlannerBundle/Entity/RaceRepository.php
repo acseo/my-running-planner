@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class RaceRepository extends EntityRepository
 {
+    public function getNextRace($date)
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->where('r.date > :date')
+            ->orderBy('r.date', 'ASC')
+            ->setParameter('date', $date)
+            ->setMaxResults(1);
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
 }

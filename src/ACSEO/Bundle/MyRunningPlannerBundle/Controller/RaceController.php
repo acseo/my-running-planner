@@ -23,6 +23,17 @@ class RaceController extends ResourceController
         return $this->getSuccessResponse($resource, $object);
     }
 
+    public function getNextRaceAction(Request $request, $date)
+    {
+        $resource = $this->addSerializeGroupToResource($this->getResource($request));
+
+        $object = $this->getDoctrine()->getManager()->getRepository('ACSEOMyRunningPlannerBundle:Race')->getNextRace($date);
+
+        $this->get('event_dispatcher')->dispatch(Events::RETRIEVE, new DataEvent($resource, $object));
+
+        return $this->getSuccessResponse($resource, $object);
+    }
+
     protected function addSerializeGroupToResource($resource)
     {
         $entityClass = explode('\\', $resource->getEntityClass());

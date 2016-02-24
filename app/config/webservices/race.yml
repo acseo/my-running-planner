@@ -13,6 +13,7 @@ services:
                            - "@resource.race.item_operation.get"
                            - "@resource.race.item_operation.put"
                            - "@resource.race.item_operation.delete"
+                           - "@resource.race.item_operation.get_next_race"
         tags:      [ { name: "api.resource" } ]
 
     resource.race.item_operation.get:
@@ -28,6 +29,21 @@ services:
             -    # Context (will be present in Hydra documentation)
                  "@type":       "hydra:Operation"
                  "hydra:title": "Get race"
+                 "returns":     "xmls:string"
+
+    resource.race.item_operation.get_next_race:
+        class:     "Dunglas\ApiBundle\Api\Operation\Operation"
+        public:    false
+        factory:   [ "@api.operation_factory", "createItemOperation" ]
+        arguments:
+            - "@resource.race"
+            - "GET"
+            - "/races/next/{date}"
+            - "ACSEOMyRunningPlannerBundle:Race:getNextRace"
+            - "api_races_get_next_race"
+            -    # Context (will be present in Hydra documentation)
+                 "@type":       "hydra:Operation"
+                 "hydra:title": "Get next race"
                  "returns":     "xmls:string"
 
     resource.race.item_operation.delete:
