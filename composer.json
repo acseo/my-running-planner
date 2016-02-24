@@ -22,7 +22,8 @@
         "nelmio/cors-bundle": "~1.4",
         "nelmio/api-doc-bundle": "~2.9@dev",
         "friendsofsymfony/http-cache-bundle": "~1.0",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "lexik/jwt-authentication-bundle": "^1.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

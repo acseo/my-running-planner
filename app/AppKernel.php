@@ -22,6 +22,7 @@ class AppKernel extends Kernel
 
             new ACSEO\Bundle\MyRunningPlannerBundle\ACSEOMyRunningPlannerBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'])) {

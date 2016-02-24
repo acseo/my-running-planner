@@ -70,6 +70,7 @@ class User extends BaseUser
     {
         parent::__construct();
         $this->username = $this->name;
+        $this->enabled = true;
     }
 
     /**
