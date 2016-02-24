@@ -11,6 +11,8 @@ services:
                    arguments:
                        -
                            - "@resource.race.item_operation.get"
+                           - "@resource.race.item_operation.put"
+                           - "@resource.race.item_operation.delete"
         tags:      [ { name: "api.resource" } ]
 
     resource.race.item_operation.get:
@@ -27,3 +29,15 @@ services:
                  "@type":       "hydra:Operation"
                  "hydra:title": "Get race"
                  "returns":     "xmls:string"
+
+    resource.race.item_operation.delete:
+        class:     "Dunglas\ApiBundle\Api\Operation\Operation"
+        public:    false
+        factory:   [ "@api.operation_factory", "createItemOperation" ]
+        arguments: [ "@resource.race", "DELETE" ]
+
+    resource.race.item_operation.put:
+        class:     "Dunglas\ApiBundle\Api\Operation\Operation"
+        public:    false
+        factory:   [ "@api.operation_factory", "createItemOperation" ]
+        arguments: [ "@resource.race", "PUT" ]
