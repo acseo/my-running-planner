@@ -1,0 +1,10 @@
+services:
+    resource.training:
+        parent:    "api.resource"
+        arguments: [ 'ACSEO\Bundle\MyRunningPlannerBundle\Entity\Training' ]
+        calls:
+            -      method:    "initNormalizationContext"
+                   arguments: [ { groups: [ "training_read" ] } ]
+            -      method:    "initDenormalizationContext"
+                   arguments: [ { groups: [ "training_write" ] } ]
+        tags:      [ { name: "api.resource" } ]

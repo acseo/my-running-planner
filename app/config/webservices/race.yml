@@ -1,0 +1,10 @@
+services:
+    resource.race:
+        parent:    "api.resource"
+        arguments: [ 'ACSEO\Bundle\MyRunningPlannerBundle\Entity\Race' ]
+        calls:
+            -      method:    "initNormalizationContext"
+                   arguments: [ { groups: [ "race_read" ] } ]
+            -      method:    "initDenormalizationContext"
+                   arguments: [ { groups: [ "race_write" ] } ]
+        tags:      [ { name: "api.resource" } ]

@@ -9,38 +9,38 @@ annotationGenerators:
     - ApiPlatform\SchemaGenerator\AnnotationGenerator\DoctrineOrmAnnotationGenerator
     - ApiPlatform\SchemaGenerator\AnnotationGenerator\ConstraintAnnotationGenerator
     - ApiPlatform\SchemaGenerator\AnnotationGenerator\DunglasApiAnnotationGenerator
-namespaces:
-  entity: AppBundle\Entity
-types:
-  CreativeWork:
-    parent: false
-    properties:
-      name: ~
-      description: ~
-      author:
-        range:       Person
-        cardinality: (*..*)
-      publisher: ~
-      genre: ~
-      datePublished: ~
-  Book:
-    properties:
-      illustrator:
-        cardinality: (*..*)
-      isbn: ~
-      numberOfPages: ~
-  Person:
-    parent: false
-    properties:
-      name: ~
-      description: ~
-      url: ~
-      birthDate: ~
-      gender: ~
-  Organization:
-    parent: false
-    properties:
-      name: ~
-      description: ~
-      url: ~
+# namespaces:
+#   entity: AppBundle\Entity
+# types:
+#   CreativeWork:
+#     parent: false
+#     properties:
+#       name: ~
+#       description: ~
+#       author:
+#         range:       Person
+#         cardinality: (*..*)
+#       publisher: ~
+#       genre: ~
+#       datePublished: ~
+#   Book:
+#     properties:
+#       illustrator:
+#         cardinality: (*..*)
+#       isbn: ~
+#       numberOfPages: ~
+#   Person:
+#     parent: false
+#     properties:
+#       name: ~
+#       description: ~
+#       url: ~
+#       birthDate: ~
+#       gender: ~
+#   Organization:
+#     parent: false
+#     properties:
+#       name: ~
+#       description: ~
+#       url: ~
 
