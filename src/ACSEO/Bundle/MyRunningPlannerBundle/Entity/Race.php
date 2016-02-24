@@ -63,6 +63,16 @@ class Race
     private $name;
 
     /**
+     * The race belongs to that user.
+     *
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @Groups({"race_read", "race_write"})
+     */
+    private $runner;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="ranking", type="integer", nullable=true)
@@ -197,5 +207,28 @@ class Race
     public function getRanking()
     {
         return $this->ranking;
+    }
+
+    /**
+     * Set runner
+     *
+     * @param \ACSEO\Bundle\MyRunningPlannerBundle\Entity\User $runner
+     * @return Race
+     */
+    public function setRunner(\ACSEO\Bundle\MyRunningPlannerBundle\Entity\User $runner = null)
+    {
+        $this->runner = $runner;
+
+        return $this;
+    }
+
+    /**
+     * Get runner
+     *
+     * @return \ACSEO\Bundle\MyRunningPlannerBundle\Entity\User 
+     */
+    public function getRunner()
+    {
+        return $this->runner;
     }
 }

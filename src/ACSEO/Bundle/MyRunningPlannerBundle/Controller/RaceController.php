@@ -25,9 +25,14 @@ class RaceController extends ResourceController
 
     public function getNextRaceAction(Request $request, $date)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        $user = $this->getUser();
+
         $resource = $this->addSerializeGroupToResource($this->getResource($request));
 
-        $object = $this->getDoctrine()->getManager()->getRepository('ACSEOMyRunningPlannerBundle:Race')->getNextRace($date);
+        $object = $this->getDoctrine()->getManager()->getRepository('ACSEOMyRunningPlannerBundle:Race')->getNextRace($date, $user);
 
         $this->get('event_dispatcher')->dispatch(Events::RETRIEVE, new DataEvent($resource, $object));
 

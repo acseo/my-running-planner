@@ -46,7 +46,7 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255 )
-     * @Groups({"user_read", "user_write"})
+     * @Groups({"user_read", "user_write", "race_read"})
      */
     private $name;
 
