@@ -58,7 +58,7 @@ class Race
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255 )
-     * @Groups({"race_read", "race_write"})
+     * @Groups({"race_read", "ranking_read", "race_write"})
      */
     private $name;
 
